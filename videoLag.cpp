@@ -1,6 +1,6 @@
 /** @file videoLag.cpp
  
- @brief Main function to show a cool video editing effect
+ @brief Main function to show a cool video editing effect -- colored lags to the foreground object in motion 
  @author Sneha Belkhale
  @date September 22nd, 2016
  
@@ -132,7 +132,7 @@ int main(int argc, const char * argv[]) {
             ROI=lagMasks[i]-ROI;
         
             
-            // Modify the pixels of the RGB
+            // Modify the pixels of the RGB to produce coloring effect
             for (int ii=0; ii<lagFrames[i].rows; ii++)
             {
                 for (int jj=0; jj<lagFrames[i].cols; jj++)
