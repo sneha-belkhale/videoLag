@@ -1,0 +1,3 @@
+/Users/snehabelkhale/Documents/xcode/videoLag/CMakeFiles/edit_cache.dir
+/Users/snehabelkhale/Documents/xcode/videoLag/CMakeFiles/rebuild_cache.dir
+/Users/snehabelkhale/Documents/xcode/videoLag/CMakeFiles/videoLag.dir
