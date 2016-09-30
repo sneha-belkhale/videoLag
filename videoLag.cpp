@@ -94,11 +94,13 @@ int main(int argc, const char * argv[]) {
             pMOG2->apply(frame, foregroundMask);
         if (arg == "2") {
             cv::absdiff(background,frame,foregroundMask);
+            //cv::imshow("webcam", foregroundMask);    //debugging
             cv::cvtColor(foregroundMask, foregroundMask, CV_BGR2GRAY);
-            cv::threshold(foregroundMask, foregroundMask, 20, 255, cv::THRESH_BINARY);
+            cv::threshold(foregroundMask, foregroundMask, 10, 255, cv::THRESH_BINARY);
+            //cv::inRange(foregroundMask, cv::Scalar(1,1,1), cv::Scalar(255,255,255), foregroundMask);
         }
         //apply morphological operations to denoise the foreground mask
-        //cv::morphologyEx(foregroundMask,foregroundMask,cv::MORPH_OPEN,element);
+        cv::morphologyEx(foregroundMask,foregroundMask,cv::MORPH_OPEN,element);
         //cv::erode(foregroundMask,foregroundMask,element);
         
         //insert a copy of the current foreground mask into our deque
