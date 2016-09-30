@@ -77,9 +77,9 @@ int main(int argc, const char * argv[]) {
         //cv::erode(foregroundMask,foregroundMask,element);
         
         //insert a copy of the current foreground mask into our deque
-        lagMasks.push_back(foregroundMask.clone());
+        lagMasks.push_front(foregroundMask.clone());
         //insert a copy of the current frame into our deque for later reference
-        lagFrames.push_back(frame.clone());
+        lagFrames.push_front(frame.clone());
         /* 
         //for debugging, write the mask to an image file
         cv::String filename=std::to_string(count);
@@ -138,8 +138,8 @@ int main(int argc, const char * argv[]) {
             frame.copyTo(frameToProcess,dstImage);
         
             if(lagMasks.size()>5){
-            lagMasks.pop_front();
-                lagFrames.pop_front();}
+            lagMasks.pop_back();
+                lagFrames.pop_back();}
 
         cv::imshow("webcam", frameToProcess);
         cv::waitKey(400);
